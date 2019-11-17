@@ -1,7 +1,7 @@
 var options = {
   numberOfBalls: 50,
   ballBaseRadius: 55,
-  ballVariantRadius: 5,
+  ballVariantRadius: 50,
   ballBaseSpeed: 1,
   ballVariantSpeed: 1,
   particleColors: ["#ff89a4", "#a989ff", "#a4ff89", "#FFFCF9"]
@@ -11,7 +11,7 @@ var w = window.innerWidth;
 var h = window.innerHeight;
 var wrapper = document.querySelector(".wrapper");
 
-function Ball() {
+function Ball(name, color) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
   this.r =
@@ -25,24 +25,30 @@ function Ball() {
   this.vector = {};
   this.vector.x = Math.cos(this.angle) * this.speed;
   this.vector.y = Math.cos(this.angle) * this.speed;
-
+  this.color = color;
+  this.name = name;
   this.initDOM();
 }
+
+// let x = new Ball();
+// wrapper.appendChild(x);
 
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
   ball.classList.add("ball");
   // ball.style.left = this.x + "px";
   // ball.style.top = this.y + "px";
-  // ball.style.width = this.r + "px";
-  // ball.style.height = this.r + "px";
-  ball.innerText = "Button";
+  ball.style.width = this.r + "px";
+  ball.style.height = this.r + "px";
+  ball.innerText = this.name;
   let index = Math.floor(Math.random() * options.particleColors.length);
-  ball.style.backgroundColor = "lightblue";
+  ball.style.backgroundColor = this.color;
 
   this.domElement = ball;
   wrapper.appendChild(ball);
 };
+
+// Bounce off edges
 Ball.prototype.updatePosition = function() {
   this.x += this.vector.x;
   this.y += this.vector.y;
@@ -67,7 +73,7 @@ Ball.prototype.updateDOM = function() {
 
 var balls = [];
 for (let i = 0; i < options.numberOfBalls; i++) {
-  let ball = new Ball();
+  let ball = new Ball("poems", "lightblue");
   balls.push(ball);
 }
 
@@ -85,3 +91,20 @@ window.addEventListener("resize", event => {
   w = window.innerWidth;
   h = window.innherHeight;
 });
+
+let button = document.getElementById("button1");
+button.addEventListener("click", () => pauseButtons());
+function pauseButtons() {
+  for (let i = 0; i < balls.length; i++) {
+    let ball = balls[i];
+    if (ball.vector.x === 0) {
+      console.log("stopped");
+      ball.vector.x = Math.cos(this.angle) * this.speed;
+      ball.vector.y = Math.cos(this.angle) * this.speed;
+      ball.updatePosition();
+    } else {
+      ball.vector.x = 0;
+      ball.vector.y = 0;
+    }
+  }
+}
