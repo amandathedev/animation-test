@@ -1,6 +1,6 @@
 var options = {
   numberOfBalls: 50,
-  ballBaseRadius: 45,
+  ballBaseRadius: 55,
   ballVariantRadius: 5,
   ballBaseSpeed: 1,
   ballVariantSpeed: 1,
@@ -32,13 +32,13 @@ function Ball() {
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
   ball.classList.add("ball");
-  ball.style.left = this.x + "px";
-  ball.style.top = this.y + "px";
-  ball.style.width = this.r + "px";
-  ball.style.height = this.r + "px";
+  // ball.style.left = this.x + "px";
+  // ball.style.top = this.y + "px";
+  // ball.style.width = this.r + "px";
+  // ball.style.height = this.r + "px";
   ball.innerText = "Button";
   let index = Math.floor(Math.random() * options.particleColors.length);
-  ball.style.backgroundColor = options.particleColors[index];
+  ball.style.backgroundColor = "lightblue";
 
   this.domElement = ball;
   wrapper.appendChild(ball);
