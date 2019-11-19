@@ -29,9 +29,7 @@ function Ball(name, color, r, link, speed = defaultSpeed) {
 
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
-  let link = document.createElement("a");
-  link.href = this.link;
-  ball.appendChild(link);
+  ball.addEventListener("click", () => redirectButton(this.name));
   ball.classList.add("ball");
   ball.style.left = this.x + "px";
   ball.style.top = this.y + "px";
@@ -42,6 +40,20 @@ Ball.prototype.initDOM = function() {
 
   this.domElement = ball;
   wrapper.appendChild(ball);
+};
+
+redirectButton = name => {
+  if (name === "tulip" || name === "lucrece" || name === "cite") {
+    window.location.href = "tulip.html";
+  } else if (name === "about" || name === "contact") {
+    window.location.href = "about.html";
+  } else if (name === "other" || name === "things") {
+    window.location.href = "things.html";
+  } else if (name === "Sundaey") {
+    window.location.href = "https://www.propellerbooks.com/";
+  } else if (name === "poems") {
+    window.location.href = "poems.html";
+  }
 };
 
 // Bounce off edges
@@ -70,16 +82,15 @@ Ball.prototype.updateDOM = function() {
 
 var balls = [];
 
-let tulip = new Ball("tulip", "#fe02a2", 45, "www.google.com", 1.8);
-let lucrece = new Ball("lucrece", "#fe02a2", 45, "www.google.com", 1.8);
-let cite = new Ball("cite", "#fe02a2", 45, "www.google.com", 1.8);
-let about = new Ball("about", "#41fdfe", 45, "www.google.com", 1.2);
-let contact = new Ball("contact", "#41fdfe", 45, "www.google.com", 1.2);
-let other = new Ball("other", "#bc13fe", 45, "www.google.com", 1.9);
-let things = new Ball("things", "#bc13fe", 45, "www.google.com", 1.9);
-let sundaey = new Ball("Sundaey", "#DB020C", 45, "www.google.com", 1.5);
-let poems = new Ball("poems", "#600563", 30, "www.google.com", 20);
-balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
+let tulip = new Ball("tulip", "#fe02a2", 45, "http://www.google.com", 1.8);
+let lucrece = new Ball("lucrece", "#fe02a2", 45, "http://www.google.com", 1.8);
+let cite = new Ball("cite", "#fe02a2", 45, "http://www.google.com", 1.8);
+let about = new Ball("about", "#41fdfe", 45, "http://www.google.com", 1.2);
+let contact = new Ball("contact", "#41fdfe", 45, "http://www.google.com", 1.2);
+let other = new Ball("other", "#bc13fe", 45, "http://www.google.com", 1.9);
+let things = new Ball("things", "#bc13fe", 45, "http://www.google.com", 1.9);
+let sundaey = new Ball("Sundaey", "#DB020C", 45, "http://www.google.com", 1.5);
+let poems = new Ball("poems", "#600563", 30, "http://www.google.com", 20);
 
 balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
 
@@ -139,7 +150,7 @@ function pauseButtons() {
       ball.vector.y = 0;
     }
   }
-  console.log(animating);
+  // console.log(animating);
   animating = !animating;
 }
 
@@ -147,7 +158,7 @@ function spawnPoems() {
   time = 1000;
   if (animating === true)
     setInterval(function() {
-      let x = new Ball("poems", "#600563", 30, "www.google.com", 20);
+      let x = new Ball("poems", "#600563", 30, "http://www.google.com", 20);
       time /= 2;
       balls.push(x);
     }, time);
@@ -156,4 +167,4 @@ function spawnPoems() {
   }
 }
 
-// spawnPoems()
+// spawnPoems();
