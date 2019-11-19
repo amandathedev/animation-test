@@ -32,7 +32,6 @@ function Ball(name, color) {
   this.initDOM();
 }
 
-
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
   ball.classList.add("ball");
@@ -69,23 +68,46 @@ Ball.prototype.updatePosition = function() {
 Ball.prototype.updateDOM = function() {
   this.domElement.style.left = this.x + "px";
   this.domElement.style.top = this.y + "px";
+  this.domElement.innerText = this.name;
 };
 
 var balls = [];
-function createGroups(){
-  let tulip = new Ball("tulip", "pink")
-  let lucrece = new Ball("lucrece", "pink")
-  let cite = new Ball("cite", "pink")
-  let about = new Ball("about", "lightblue")
-  let contact = new Ball("contact", "lightblue")
-  let other = new Ball("pther", "purple")
-  let things = new Ball("things", "purple")
-  let sundaey = new Ball("Sundaey", "blue")
-  let poems = new Ball("poems", "red")
 
-  balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems)
+let tulip = new Ball("tulip", "pink");
+let lucrece = new Ball("lucrece", "pink");
+let cite = new Ball("cite", "pink");
+let about = new Ball("about", "lightblue");
+let contact = new Ball("contact", "lightblue");
+let other = new Ball("other", "purple");
+let things = new Ball("things", "purple");
+let sundaey = new Ball("Sundaey", "blue");
+let poems = new Ball("poems", "red");
+
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
+
+function switchAbout(button) {
+  setInterval(function() {
+    if (button.name === "about") {
+      button.name = "contact";
+    } else {
+      button.name = "about";
+    }
+  }, 1500);
 }
-createGroups()
+switchAbout(about);
+switchAbout(contact);
+
+function switchThings(button) {
+  setInterval(function() {
+    if (button.name === "things") {
+      button.name = "other";
+    } else {
+      button.name = "things";
+    }
+  }, 2500);
+}
+switchThings(things);
+switchThings(other);
 
 requestAnimationFrame(updateFrame);
 
@@ -109,8 +131,8 @@ function pauseButtons() {
     let ball = balls[i];
     if (animating === false) {
       ball.speed =
-      options.ballBaseSpeed +
-      Math.floor(Math.random() * options.ballVariantSpeed);
+        options.ballBaseSpeed +
+        Math.floor(Math.random() * options.ballVariantSpeed);
       ball.angle = Math.floor(Math.random() * 360);
       ball.vector.x = Math.cos(ball.angle) * ball.speed;
       ball.vector.y = Math.cos(ball.angle) * ball.speed;
@@ -119,6 +141,6 @@ function pauseButtons() {
       ball.vector.y = 0;
     }
   }
-  console.log(animating)
-  animating = !animating
+  console.log(animating);
+  animating = !animating;
 }
