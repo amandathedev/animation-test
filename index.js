@@ -1,31 +1,31 @@
-var options = {
+const options = {
   ballBaseSpeed: 1,
   ballVariantSpeed: 2
 };
 
-var w = window.innerWidth;
-var h = window.innerHeight;
-var wrapper = document.querySelector(".wrapper");
-
+//globals
+let w = window.innerWidth;
+let h = window.innerHeight;
+let wrapper = document.querySelector(".wrapper");
 let animating = true;
-let defaultSpeed =
-  options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
+let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
 
-function Ball(name, color, r, link, speed = defaultSpeed) {
+//Construction of button class
+function Ball(name, color, r, speed = defaultSpeed) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
   this.r = r;
   this.speed = speed;
   this.angle = Math.floor(Math.random() * 360);
-  this.link = link
   this.vector = {};
-  this.vector.x = Math.random() * 4;
-  this.vector.y = Math.random() * 4;
+  this.vector.y = Math.random() * 2;
+  this.vector.x = Math.cos(this.angle) * this.speed;
   this.color = color;
   this.name = name;
   this.initDOM();
 }
 
+//Initialize buttons onto DOM
 Ball.prototype.initDOM = function() {
   let ball = document.createElement("button");
   ball.classList.add("ball");
@@ -64,45 +64,53 @@ Ball.prototype.updateDOM = function() {
   this.domElement.innerText = this.name;
 };
 
+//Creation of starting button menu
 var balls = [];
-
-let tulip = new Ball("tulip", "#fe02a2", 45, "www.google.com", 1.8);
-let lucrece = new Ball("lucrece", "#fe02a2", 45, "www.google.com", 1.8);
-let cite = new Ball("cite", "#fe02a2", 45, "www.google.com", 1.8);
-let about = new Ball("about", "#41fdfe", 45, "www.google.com", 1.2);
-let contact = new Ball("contact", "#41fdfe", 45, "www.google.com", 1.2);
-let other = new Ball("other", "#bc13fe", 45, "www.google.com", 1.9);
-let things = new Ball("things", "#bc13fe", 45, "www.google.com", 1.9);
-let sundaey = new Ball("Sundaey", "#DB020C", 45, "www.google.com", 1.5);
-let poems = new Ball("poems", "#600563", 30, "www.google.com", 20);
+let tulip = new Ball("tulip", "#fe02a2", 45, 1.8);
+let lucrece = new Ball("lucrece", "#fe02a2", 45, 1.8);
+let cite = new Ball("cite", "#fe02a2", 45, 1.8);
+let about = new Ball("about", "#41fdfe", 45, 1.2);
+let contact = new Ball("contact", "#41fdfe", 45, 1.2);
+let other = new Ball("other", "#bc13fe", 45, 1.9);
+let things = new Ball("things", "#bc13fe", 45, 1.9);
+let sundaey = new Ball("Sundaey", "#DB020C", 45, 1.5);
+let poems = new Ball("poems", "#90ee90", 30, 12);
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
 balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
 
-balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
-
+//functions for button text switch
 function switchAbout(button) {
   setInterval(function() {
-    if (button.name === "about") {
-      button.name = "contact";
-    } else {
-      button.name = "about";
-    }
+    if (button.name === "about") button.name = "contact";
+    else button.name = "about";
   }, 1500);
 }
-switchAbout(about);
-switchAbout(contact);
 
 function switchThings(button) {
   setInterval(function() {
-    if (button.name === "things") {
-      button.name = "other";
-    } else {
-      button.name = "things";
-    }
+    if (button.name === "things") button.name = "other";
+    else button.name = "things";
   }, 2500);
 }
+
+function switchTulip(button){
+  setInterval(function(){
+    if(button.name === "tulip") button.name = "lucrece"
+    else if(button.name === "lucrece") button.name = "cite"
+    else if(button.name === "cite") button.name = "tulip"
+  }, 2000)
+}
+
+//invocations of button text switch
+switchTulip(tulip);
+switchTulip(lucrece);
+switchTulip(cite);
 switchThings(things);
 switchThings(other);
+switchAbout(about);
+switchAbout(contact);
 
+//Animation update functions
 requestAnimationFrame(updateFrame);
 
 function updateFrame() {
@@ -118,6 +126,7 @@ window.addEventListener("resize", event => {
   h = window.innherHeight;
 });
 
+//Stop animation button
 let button = document.getElementById("button1");
 button.addEventListener("click", () => pauseButtons());
 function pauseButtons() {
@@ -135,15 +144,15 @@ function pauseButtons() {
       ball.vector.y = 0;
     }
   }
-  console.log(animating);
   animating = !animating;
 }
 
+//SPawn new poem buttons
 function spawnPoems(){
   time = 10000
   if(animating === true){
     setInterval(function(){
-      let x = new Ball("poems", "#600563", 30, "www.google.com", 20)
+      let x = new Ball("poems", "#90ee90", 30, "www.google.com", 12)
       time /= 2
       balls.push(x)
     }, time)
@@ -154,14 +163,15 @@ function spawnPoems(){
   }
 }
 
+//create random button movement
 function randomMovement(){
   if(animating === true){
     setInterval(function(){
       let i = Math.floor(Math.random() * balls.length)
       let ball = balls[i]
       console.log(i)
-      ball.vector.x = Math.random() * 4
-      ball.vector.y = Math.random() * 4
+      ball.vector.x = Math.random() * 2
+      ball.vector.y = Math.random() * 2
     }, 1000)
   }
 }
