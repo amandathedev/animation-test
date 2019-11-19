@@ -11,6 +11,8 @@ var w = window.innerWidth;
 var h = window.innerHeight;
 var wrapper = document.querySelector(".wrapper");
 
+let animating = true;
+
 function Ball(name, color) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
