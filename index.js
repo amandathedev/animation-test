@@ -17,10 +17,9 @@ function Ball(name, color, r, link, speed = defaultSpeed) {
   this.speed = speed;
   this.angle = Math.floor(Math.random() * 360);
   this.link = link
-
   this.vector = {};
-  this.vector.x = Math.cos(this.angle) * this.speed;
-  this.vector.y = Math.cos(this.angle) * this.speed;
+  this.vector.x = Math.random() * 4;
+  this.vector.y = Math.random() * 4;
   this.color = color;
   this.name = name;
   this.initDOM();
@@ -28,10 +27,7 @@ function Ball(name, color, r, link, speed = defaultSpeed) {
 
 
 Ball.prototype.initDOM = function() {
-  var ball = document.createElement("button");
-  let link = document.createElement("a")
-  link.href = this.link
-  ball.appendChild(link)
+  let ball = document.createElement("button");
   ball.classList.add("ball");
   ball.style.left = this.x + "px";
   ball.style.top = this.y + "px";
@@ -116,16 +112,32 @@ function pauseButtons() {
 }
 
 function spawnPoems(){
-  time = 1000
-  if(animating === true)
+  time = 10000
+  if(animating === true){
     setInterval(function(){
       let x = new Ball("poems", "#600563", 30, "www.google.com", 20)
       time /= 2
       balls.push(x)
     }, time)
+  }
   else{
-    time = 1000
+    //create stop interval
+    time = 10000
   }
 }
 
-// spawnPoems()
+function randomMovement(){
+  if(animating === true){
+    setInterval(function(){
+      let i = Math.floor(Math.random() * balls.length)
+      let ball = balls[i]
+      console.log(i)
+      ball.vector.x = Math.random() * 4
+      ball.vector.y = Math.random() * 4
+    }, 1000)
+  }
+}
+
+
+randomMovement()
+spawnPoems()
