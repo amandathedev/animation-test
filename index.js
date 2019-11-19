@@ -1,10 +1,6 @@
 var options = {
-  numberOfBalls: 50,
-  ballBaseRadius: 55,
-  ballVariantRadius: 50,
   ballBaseSpeed: 1,
-  ballVariantSpeed: 1,
-  particleColors: ["#ff89a4", "#a989ff", "#a4ff89", "#FFFCF9"]
+  ballVariantSpeed: 2,
 };
 
 var w = window.innerWidth;
@@ -12,17 +8,15 @@ var h = window.innerHeight;
 var wrapper = document.querySelector(".wrapper");
 
 let animating = true;
+let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed)
 
-function Ball(name, color) {
+function Ball(name, color, r, link, speed = defaultSpeed) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
-  this.r =
-    options.ballBaseRadius +
-    Math.floor(Math.random() * options.ballVariantRadius);
-  this.speed =
-    options.ballBaseSpeed +
-    Math.floor(Math.random() * options.ballVariantSpeed);
+  this.r = r;
+  this.speed = speed;
   this.angle = Math.floor(Math.random() * 360);
+  this.link = link
 
   this.vector = {};
   this.vector.x = Math.cos(this.angle) * this.speed;
@@ -35,13 +29,15 @@ function Ball(name, color) {
 
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
+  let link = document.createElement("a")
+  link.href = this.link
+  ball.appendChild(link)
   ball.classList.add("ball");
   ball.style.left = this.x + "px";
   ball.style.top = this.y + "px";
-  ball.style.width = this.r + "px";
+  ball.style.width = (this.r * 2) + "px";
   ball.style.height = this.r + "px";
   ball.innerText = this.name;
-  let index = Math.floor(Math.random() * options.particleColors.length);
   ball.style.backgroundColor = this.color;
 
   this.domElement = ball;
@@ -72,20 +68,17 @@ Ball.prototype.updateDOM = function() {
 };
 
 var balls = [];
-function createGroups(){
-  let tulip = new Ball("tulip", "pink")
-  let lucrece = new Ball("lucrece", "pink")
-  let cite = new Ball("cite", "pink")
-  let about = new Ball("about", "lightblue")
-  let contact = new Ball("contact", "lightblue")
-  let other = new Ball("pther", "purple")
-  let things = new Ball("things", "purple")
-  let sundaey = new Ball("Sundaey", "blue")
-  let poems = new Ball("poems", "red")
+let tulip = new Ball("tulip", "#fe02a2", 45, "www.google.com", 1.8)
+let lucrece = new Ball("lucrece", "#fe02a2", 45, "www.google.com", 1.8)
+let cite = new Ball("cite", "#fe02a2", 45, "www.google.com", 1.8)
+let about = new Ball("about", "#41fdfe", 45, "www.google.com", 1.2)
+let contact = new Ball("contact", "#41fdfe", 45, "www.google.com", 1.2)
+let other = new Ball("pther", "#bc13fe", 45, "www.google.com", 1.9)
+let things = new Ball("things", "#bc13fe", 45, "www.google.com", 1.9)
+let sundaey = new Ball("Sundaey", "#DB020C", 45, "www.google.com", 1.5)
+let poems = new Ball("poems", "#600563", 30, "www.google.com", 20)
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems)
 
-  balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems)
-}
-createGroups()
 
 requestAnimationFrame(updateFrame);
 
@@ -119,6 +112,20 @@ function pauseButtons() {
       ball.vector.y = 0;
     }
   }
-  console.log(animating)
   animating = !animating
 }
+
+function spawnPoems(){
+  time = 1000
+  if(animating === true)
+    setInterval(function(){
+      let x = new Ball("poems", "#600563", 30, "www.google.com", 20)
+      time /= 2
+      balls.push(x)
+    }, time)
+  else{
+    time = 1000
+  }
+}
+
+// spawnPoems()
