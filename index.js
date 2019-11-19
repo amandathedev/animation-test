@@ -32,14 +32,12 @@ function Ball(name, color) {
   this.initDOM();
 }
 
-// let x = new Ball();
-// wrapper.appendChild(x);
 
 Ball.prototype.initDOM = function() {
   var ball = document.createElement("button");
   ball.classList.add("ball");
-  // ball.style.left = this.x + "px";
-  // ball.style.top = this.y + "px";
+  ball.style.left = this.x + "px";
+  ball.style.top = this.y + "px";
   ball.style.width = this.r + "px";
   ball.style.height = this.r + "px";
   ball.innerText = this.name;
@@ -74,10 +72,20 @@ Ball.prototype.updateDOM = function() {
 };
 
 var balls = [];
-for (let i = 0; i < options.numberOfBalls; i++) {
-  let ball = new Ball("poems", "lightblue");
-  balls.push(ball);
+function createGroups(){
+  let tulip = new Ball("tulip", "pink")
+  let lucrece = new Ball("lucrece", "pink")
+  let cite = new Ball("cite", "pink")
+  let about = new Ball("about", "lightblue")
+  let contact = new Ball("contact", "lightblue")
+  let other = new Ball("pther", "purple")
+  let things = new Ball("things", "purple")
+  let sundaey = new Ball("Sundaey", "blue")
+  let poems = new Ball("poems", "red")
+
+  balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems)
 }
+createGroups()
 
 requestAnimationFrame(updateFrame);
 
@@ -99,14 +107,18 @@ button.addEventListener("click", () => pauseButtons());
 function pauseButtons() {
   for (let i = 0; i < balls.length; i++) {
     let ball = balls[i];
-    if (ball.vector.x === 0) {
-      console.log("stopped");
-      ball.vector.x = Math.cos(this.angle) * this.speed;
-      ball.vector.y = Math.cos(this.angle) * this.speed;
-      ball.updatePosition();
+    if (animating === false) {
+      ball.speed =
+      options.ballBaseSpeed +
+      Math.floor(Math.random() * options.ballVariantSpeed);
+      ball.angle = Math.floor(Math.random() * 360);
+      ball.vector.x = Math.cos(ball.angle) * ball.speed;
+      ball.vector.y = Math.cos(ball.angle) * ball.speed;
     } else {
       ball.vector.x = 0;
       ball.vector.y = 0;
     }
   }
+  console.log(animating)
+  animating = !animating
 }
