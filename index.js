@@ -1,6 +1,6 @@
 var options = {
   ballBaseSpeed: 1,
-  ballVariantSpeed: 2,
+  ballVariantSpeed: 2
 };
 
 var w = window.innerWidth;
@@ -8,7 +8,8 @@ var h = window.innerHeight;
 var wrapper = document.querySelector(".wrapper");
 
 let animating = true;
-let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed)
+let defaultSpeed =
+  options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
 
 function Ball(name, color, r, link, speed = defaultSpeed) {
   this.x = Math.floor(Math.random() * w);
@@ -25,13 +26,12 @@ function Ball(name, color, r, link, speed = defaultSpeed) {
   this.initDOM();
 }
 
-
 Ball.prototype.initDOM = function() {
   let ball = document.createElement("button");
   ball.classList.add("ball");
   ball.style.left = this.x + "px";
   ball.style.top = this.y + "px";
-  ball.style.width = (this.r * 2) + "px";
+  ball.style.width = this.r * 2 + "px";
   ball.style.height = this.r + "px";
   ball.innerText = this.name;
   ball.style.backgroundColor = this.color;
@@ -61,20 +61,47 @@ Ball.prototype.updatePosition = function() {
 Ball.prototype.updateDOM = function() {
   this.domElement.style.left = this.x + "px";
   this.domElement.style.top = this.y + "px";
+  this.domElement.innerText = this.name;
 };
 
 var balls = [];
-let tulip = new Ball("tulip", "#fe02a2", 45, "www.google.com", 1.8)
-let lucrece = new Ball("lucrece", "#fe02a2", 45, "www.google.com", 1.8)
-let cite = new Ball("cite", "#fe02a2", 45, "www.google.com", 1.8)
-let about = new Ball("about", "#41fdfe", 45, "www.google.com", 1.2)
-let contact = new Ball("contact", "#41fdfe", 45, "www.google.com", 1.2)
-let other = new Ball("pther", "#bc13fe", 45, "www.google.com", 1.9)
-let things = new Ball("things", "#bc13fe", 45, "www.google.com", 1.9)
-let sundaey = new Ball("Sundaey", "#DB020C", 45, "www.google.com", 1.5)
-let poems = new Ball("poems", "#600563", 30, "www.google.com", 20)
-balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems)
 
+let tulip = new Ball("tulip", "#fe02a2", 45, "www.google.com", 1.8);
+let lucrece = new Ball("lucrece", "#fe02a2", 45, "www.google.com", 1.8);
+let cite = new Ball("cite", "#fe02a2", 45, "www.google.com", 1.8);
+let about = new Ball("about", "#41fdfe", 45, "www.google.com", 1.2);
+let contact = new Ball("contact", "#41fdfe", 45, "www.google.com", 1.2);
+let other = new Ball("other", "#bc13fe", 45, "www.google.com", 1.9);
+let things = new Ball("things", "#bc13fe", 45, "www.google.com", 1.9);
+let sundaey = new Ball("Sundaey", "#DB020C", 45, "www.google.com", 1.5);
+let poems = new Ball("poems", "#600563", 30, "www.google.com", 20);
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
+
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
+
+function switchAbout(button) {
+  setInterval(function() {
+    if (button.name === "about") {
+      button.name = "contact";
+    } else {
+      button.name = "about";
+    }
+  }, 1500);
+}
+switchAbout(about);
+switchAbout(contact);
+
+function switchThings(button) {
+  setInterval(function() {
+    if (button.name === "things") {
+      button.name = "other";
+    } else {
+      button.name = "things";
+    }
+  }, 2500);
+}
+switchThings(things);
+switchThings(other);
 
 requestAnimationFrame(updateFrame);
 
@@ -98,8 +125,8 @@ function pauseButtons() {
     let ball = balls[i];
     if (animating === false) {
       ball.speed =
-      options.ballBaseSpeed +
-      Math.floor(Math.random() * options.ballVariantSpeed);
+        options.ballBaseSpeed +
+        Math.floor(Math.random() * options.ballVariantSpeed);
       ball.angle = Math.floor(Math.random() * 360);
       ball.vector.x = Math.cos(ball.angle) * ball.speed;
       ball.vector.y = Math.cos(ball.angle) * ball.speed;
@@ -108,7 +135,8 @@ function pauseButtons() {
       ball.vector.y = 0;
     }
   }
-  animating = !animating
+  console.log(animating);
+  animating = !animating;
 }
 
 function spawnPoems(){
