@@ -149,7 +149,7 @@ function pauseButtons() {
 
 //SPawn new poem buttons
 function spawnPoems(){
-  time = 10000
+  time = 1000
   if(animating === true){
     setInterval(function(){
       let x = new Ball("poems", "#90ee90", 30, "www.google.com", 12)
@@ -159,7 +159,7 @@ function spawnPoems(){
   }
   else{
     //create stop interval
-    time = 10000
+    time = 1000
   }
 }
 
