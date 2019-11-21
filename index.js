@@ -53,7 +53,7 @@ redirectButton = name => {
     window.location.href = "things/things.html";
   } else if (name === "Sundaey") {
     window.location.href = "https://www.propellerbooks.com/";
-  } else if (name === "poems") {
+  } else if (name === "prms") {
     window.location.href = "poems/poems.html";
   } else if (name === "august") {
     window.location.href = "august/august.html";
@@ -99,7 +99,7 @@ let things = new Ball("things", "#D8BFD8", 45, 1.9);
 // group 4
 let sundaey = new Ball("SUNDAEY", "#C362FF", 45, 1.5);
 // group 5
-let poems = new Ball("prms", "#FF765E", 30, 6);
+let poems = new Ball("prms", "#FF765E", 35, 6);
 // group 6
 let august = new Ball("august", "#5FBAB0", 45, 1.7);
 balls.push(
@@ -215,20 +215,16 @@ function randomMovement() {
   }, 300);
 }
 
-function changeBackground(){
-  let body = document.querySelector("body")
-  let count = 1
+function consoleMessage(){
+  let num = 0
   setInterval(function(){
-    count++
-    if(count % 20 === 0){
-      body.style.backgroundImage = `url("https://i.imgur.com/OJPrb4B.gif")`
-    }
-    else{
-      body.style.backgroundImage = `url("https://i.imgur.com/6lk8XWL.png")`
-    }
-  }, 5000)
+    let colors = ["blue", "red", "green", "yellow", "orange", "purple"]
+    if(num > 5)num = 0
+    console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`)
+    num++
+  }, 1000)
 }
 
 randomMovement();
 spawnPoems();
-// changeBackground()
+// consoleMessage()
