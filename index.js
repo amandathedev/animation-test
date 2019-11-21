@@ -86,22 +86,46 @@ Ball.prototype.updateDOM = function() {
 
 //Creation of starting button menu
 var balls = [];
-// group 1
-let tulip = new Ball("tulip", "#FF407D", 45, 1.8);
-let lucrece = new Ball("lucrèce", "#FF407D", 45, 1.8);
-let cite = new Ball("cite", "#FF407D", 45, 1.8);
-// group 2
-let about = new Ball("about", "#0073D4", 45, 1.2);
-let contact = new Ball("contact", "#0073D4", 45, 1.2);
-// group 3
-let other = new Ball("other", "#D8BFD8", 45, 1.9);
-let things = new Ball("things", "#D8BFD8", 45, 1.9);
-// group 4
-let sundaey = new Ball("SUNDAEY", "#C362FF", 45, 1.5);
-// group 5
-let poems = new Ball("prms", "#FF765E", 35, 6);
-// group 6
-let august = new Ball("august", "#5FBAB0", 45, 1.7);
+// group 1 #FF407D
+let tulip = new Ball("tulip", "rgba(255, 255, 255, 0.702)", 45, 1.8, "#FF355E");
+let lucrece = new Ball(
+  "lucrèce",
+  "rgba(255, 255, 255, 0.702)",
+  45,
+  1.8,
+  "#FF355E"
+);
+let cite = new Ball("cite", "rgba(255, 255, 255, 0.702)", 45, 1.8, "#FF355E");
+// group 2 #0073D4
+let about = new Ball("about", "rgba(255, 255, 255, 0.702)", 45, 1.2, "#FF6037");
+let contact = new Ball(
+  "contact",
+  "rgba(255, 255, 255, 0.702)",
+  45,
+  1.2,
+  "#FF6037"
+);
+// group 3 #D8BFD8
+let other = new Ball("other", "rgba(255, 255, 255, 0.702)", 45, 1.9, "#3F26BF");
+let things = new Ball(
+  "things",
+  "rgba(255, 255, 255, 0.702)",
+  45,
+  1.9,
+  "#3F26BF"
+);
+// group 4 #C362FF
+let sundaey = new Ball(
+  "SUNDAEY",
+  "rgba(255, 255, 255, 0.702)",
+  45,
+  1.5,
+  "#319177"
+);
+// group 5 #FF765E
+let poems = new Ball("prms", "rgba(255, 255, 255, 0.702)", 35, 6, "#436CB9");
+// group 6 #5FBAB0
+let august = new Ball("august", "rgba(255, 255, 255, 0.702)", 45, 1.7);
 balls.push(
   tulip,
   lucrece,
@@ -186,13 +210,13 @@ function pauseButtons() {
   animating = !animating;
 }
 
-//Spawn new poem buttons
+//Spawn new poem buttons `rgba(250, 91, 61, ${opacity})`
 function spawnPoems() {
   time = 5000;
   let opacity = 1;
   setInterval(function() {
     if (animating === true) {
-      let x = new Ball("prms", `rgba(250, 91, 61, ${opacity})`, 35, 6);
+      let x = new Ball("prms", "rgba(255, 255, 255, 0.702)", 35, 6);
       time /= 2;
       if (opacity <= 0.1) opacity = 1;
       else opacity -= 0.05;
@@ -215,14 +239,14 @@ function randomMovement() {
   }, 300);
 }
 
-function consoleMessage(){
-  let num = 0
-  setInterval(function(){
-    let colors = ["blue", "red", "green", "yellow", "orange", "purple"]
-    if(num > 5)num = 0
-    console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`)
-    num++
-  }, 1000)
+function consoleMessage() {
+  let num = 0;
+  setInterval(function() {
+    let colors = ["blue", "red", "green", "yellow", "orange", "purple"];
+    if (num > 5) num = 0;
+    console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`);
+    num++;
+  }, 1000);
 }
 
 randomMovement();
