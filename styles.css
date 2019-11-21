@@ -9,7 +9,10 @@
 
 .ball {
   position: absolute;
-  border-radius: 8%;
-  border-color: #46433f;
+  border-radius: 20%;
   font-size: 110%;
+  box-shadow: 1px 2px 4px;
+  color: yellow;
+  font-family: 'Alata', sans-serif;
+  text-align: center;
 }
