@@ -2,13 +2,19 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-image: url("https://3apq7g38q3kw2yn3fx4bojii-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/12071223425_64cc405541_o_roly-poly.jpg");
-  background-size: cover;
+
+  /* background-image: url("https://3apq7g38q3kw2yn3fx4bojii-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/12071223425_64cc405541_o_roly-poly.jpg"); */
 }
 
 body {
-  background: #46433f;
+  /* background: #46433f; */
+  background-image: url("https://i.imgur.com/6lk8XWL.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
 }
 
 .outer {
@@ -16,21 +22,22 @@ body {
   width: 25%;
   padding-bottom: 25%;
 }
+
 .inner {
   position: absolute;
   width: 80%;
   height: 80%;
   margin-top: 5%;
   margin-left: 5%;
-  background-color: #00ff00;
+  border: 5px solid #c8ff00;
 }
 
 #box-text {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 1.5em;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3.5em;
+  font-family: "Tomorrow", sans-serif;
 }
 
 .ball {
@@ -38,8 +45,9 @@ body {
   border-radius: 20%;
   font-size: 110%;
   box-shadow: 1px 2px 4px;
-  color: yellow;
-  font-family: 'Alata', sans-serif;
+  /* color: yellow; */
+  color: black;
+  font-family: "Alata", sans-serif;
   text-align: center;
 }
 
@@ -61,7 +69,6 @@ body {
   padding: 1.2em 2.8em;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
@@ -81,10 +88,75 @@ body {
   color: #fff;
   box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
   transition: all 150ms ease-in-out;
+  border-radius: 50px;
+  letter-spacing: 4px;
+  font-size: 0.9em;
+  width: 20em;
+  text-align: center;
 }
 
 #button1:hover {
   box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+}
+
+#button2 {
+  outline: 0;
+  border-radius: 50px;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  letter-spacing: 4px;
+  overflow: hidden;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 500ms ease-in-out;
+  width: 23em;
+}
+
+#button2:hover {
+  animation: blink 0.3s infinite;
+}
+
+#button-p {
+  animation: typing 4s steps(12) infinite;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  55%,
+  65%,
+  75% {
+    opacity: 1;
+  }
+  60%,
+  70% {
+    opacity: 0;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  25%,
+  75% {
+    color: transparent;
+  }
+  40%,
+  60% {
+    color: #fff;
+  }
 }
 
 .button-div {
