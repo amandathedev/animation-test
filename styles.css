@@ -8,10 +8,11 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #d645fa, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
   animation: gradientBG 10s ease infinite;
+  cursor: url(halloween-black-cat.png), auto;
 }
 
 @-webkit-keyframes gradientBG {
@@ -64,6 +65,10 @@ a {
   font-family: "Tomorrow", sans-serif;
 }
 
+#box-text:hover {
+  color: red;
+}
+
 .ball {
   position: absolute;
   border-radius: 20%;
@@ -75,6 +80,7 @@ a {
   text-align: center;
   border-radius: 20%;
   transform: skew(10deg);
+  cursor: pointer;
 }
 
 .corner-buttons {

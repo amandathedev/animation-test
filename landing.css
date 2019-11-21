@@ -1,0 +1,32 @@
+html,
+body {
+  font-family: "Ubuntu", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+
+.text {
+  padding: 15px 40px 15px 40px;
+  font-size: 7rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: url("https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/07/pile-of-cockroaches.jpg");
+  background-position: 210px;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  color: white;
+  margin-top: 1em;
+}
+
+.large {
+  font-size: 12rem;
+}
