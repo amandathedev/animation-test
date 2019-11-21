@@ -215,18 +215,20 @@ function randomMovement() {
   }, 300);
 }
 
-function changeBackground() {
-  let body = document.querySelector("body");
-  let count = 1;
-  setInterval(function() {
-    if (count % 20 === 0) {
-      body.style.backgroundImage = "hey";
-    } else {
-      url("https://i.imgur.com/6lk8XWL.png");
+function changeBackground(){
+  let body = document.querySelector("body")
+  let count = 1
+  setInterval(function(){
+    count++
+    if(count % 20 === 0){
+      body.style.backgroundImage = `url("https://i.imgur.com/OJPrb4B.gif")`
     }
-  }, 1000);
+    else{
+      body.style.backgroundImage = `url("https://i.imgur.com/6lk8XWL.png")`
+    }
+  }, 5000)
 }
 
 randomMovement();
 spawnPoems();
-changeBackground();
+// changeBackground()
