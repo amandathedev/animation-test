@@ -186,7 +186,7 @@ function pauseButtons() {
   animating = !animating;
 }
 
-//Sawn new poem buttons
+//Spawn new poem buttons
 function spawnPoems() {
   time = 5000;
   let opacity = 1;
