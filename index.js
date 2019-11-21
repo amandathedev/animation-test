@@ -205,7 +205,7 @@ function spawnPoems() {
 
 //create random button movement
 function randomMovement() {
-  setInterval(function random() {
+  setInterval(function() {
     if (animating === true) {
       let i = Math.floor(Math.random() * balls.length);
       let ball = balls[i];
@@ -215,5 +215,18 @@ function randomMovement() {
   }, 300);
 }
 
+function changeBackground() {
+  let body = document.querySelector("body");
+  let count = 1;
+  setInterval(function() {
+    if (count % 20 === 0) {
+      body.style.backgroundImage = "hey";
+    } else {
+      url("https://i.imgur.com/6lk8XWL.png");
+    }
+  }, 1000);
+}
+
 randomMovement();
 spawnPoems();
+changeBackground();
