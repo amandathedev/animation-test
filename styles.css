@@ -6,7 +6,7 @@
 
 body {
   background-image: url("https://i.imgur.com/6lk8XWL.png");
-  /* background-image: url("https://i.imgur.com/OJPrb4B.gif") */
+  /* background-image: url("https://i.imgur.com/OJPrb4B.gif"); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -46,6 +46,8 @@ a {
   color: black;
   font-family: "Alata", sans-serif;
   text-align: center;
+  border-radius: 20%;
+  transform: skew(10deg);
 }
 
 .corner-buttons {
