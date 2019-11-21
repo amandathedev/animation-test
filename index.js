@@ -8,10 +8,11 @@ let w = window.innerWidth;
 let h = window.innerHeight;
 let wrapper = document.querySelector(".wrapper");
 let animating = true;
-let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
+let defaultSpeed =
+  options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
 
 //Construction of button class
-function Ball(name, color, size, speed = defaultSpeed) {
+function Ball(name, color, size, speed = defaultSpeed, textColor = "black") {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
   this.r = size;
@@ -22,6 +23,7 @@ function Ball(name, color, size, speed = defaultSpeed) {
   this.vector.x = Math.cos(this.angle) * this.speed;
   this.color = color;
   this.name = name;
+  this.textColor = textColor;
   this.initDOM();
 }
 
@@ -35,8 +37,9 @@ Ball.prototype.initDOM = function() {
   ball.style.width = this.r * 2 + "px";
   ball.style.height = this.r + "px";
   ball.innerText = this.name;
+  ball.style.color = this.textColor;
   ball.style.backgroundColor = this.color;
-  ball.style.borderColor = this.color
+  ball.style.borderColor = this.color;
   this.domElement = ball;
   wrapper.appendChild(ball);
 };
@@ -52,8 +55,8 @@ redirectButton = name => {
     window.location.href = "https://www.propellerbooks.com/";
   } else if (name === "poems") {
     window.location.href = "poems/poems.html";
-  } else if (name === "august"){
-    window.location.href = 'august/august.html'
+  } else if (name === "august") {
+    window.location.href = "august/august.html";
   }
 };
 
@@ -83,17 +86,34 @@ Ball.prototype.updateDOM = function() {
 
 //Creation of starting button menu
 var balls = [];
-let tulip = new Ball("tulip", "#fe02a2", 45, 1.8);
-let lucrece = new Ball("lucrèce", "#fe02a2", 45, 1.8);
-let cite = new Ball("cite", "#fe02a2", 45, 1.8);
-let about = new Ball("about", "#41fdfe", 45, 1.2);
-let contact = new Ball("contact", "#41fdfe", 45, 1.2);
-let other = new Ball("other", "#ef43f9", 45, 1.9);
-let things = new Ball("things", "#ef43f9", 45, 1.9);
-let sundaey = new Ball("SUNDAEY", "#F05248", 45, 1.5);
-let poems = new Ball("prms", "#E5CFF4", 30, 6);
-let august = new Ball("august", "pink", 45, 1.7)
-balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems, august);
+// group 1
+let tulip = new Ball("tulip", "#FF407D", 45, 1.8);
+let lucrece = new Ball("lucrèce", "#FF407D", 45, 1.8);
+let cite = new Ball("cite", "#FF407D", 45, 1.8);
+// group 2
+let about = new Ball("about", "#0073D4", 45, 1.2);
+let contact = new Ball("contact", "#0073D4", 45, 1.2);
+// group 3
+let other = new Ball("other", "#D8BFD8", 45, 1.9);
+let things = new Ball("things", "#D8BFD8", 45, 1.9);
+// group 4
+let sundaey = new Ball("SUNDAEY", "#C362FF", 45, 1.5);
+// group 5
+let poems = new Ball("prms", "#FF765E", 30, 6);
+// group 6
+let august = new Ball("august", "#5FBAB0", 45, 1.7);
+balls.push(
+  tulip,
+  lucrece,
+  cite,
+  about,
+  contact,
+  other,
+  things,
+  sundaey,
+  poems,
+  august
+);
 
 //functions for button text switch
 function switchAbout(button) {
@@ -146,7 +166,7 @@ window.addEventListener("resize", event => {
 //Stop animation button
 let button = document.getElementById("button1");
 button.addEventListener("click", () => {
-  pauseButtons()
+  pauseButtons();
 });
 function pauseButtons() {
   for (let i = 0; i < balls.length; i++) {
@@ -170,26 +190,26 @@ function pauseButtons() {
 function spawnPoems() {
   time = 5000;
   setInterval(function() {
-    if(animating === true){
-      let x = new Ball("prms", "#90ee90", 30, 6);
+    if (animating === true) {
+      let x = new Ball("prms", "#FF765E", 30, 6);
       time /= 2;
       balls.push(x);
-    }else{
-      time = 5000
+    } else {
+      time = 5000;
     }
   }, time);
 }
 
 //create random button movement
 function randomMovement() {
-    setInterval(function random() {
-      if(animating === true) {
-        let i = Math.floor(Math.random() * balls.length);
-        let ball = balls[i];
-        ball.vector.y = Math.cos(ball.angle) * ball.speed * Math.random() * 2
-        ball.vector.x = Math.cos(ball.angle) * ball.speed * Math.random() * 2
-      }
-    }, 300);
+  setInterval(function random() {
+    if (animating === true) {
+      let i = Math.floor(Math.random() * balls.length);
+      let ball = balls[i];
+      ball.vector.y = Math.cos(ball.angle) * ball.speed * Math.random() * 2;
+      ball.vector.x = Math.cos(ball.angle) * ball.speed * Math.random() * 2;
+    }
+  }, 300);
 }
 
 randomMovement();
