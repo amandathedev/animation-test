@@ -8,14 +8,13 @@ let w = window.innerWidth;
 let h = window.innerHeight;
 let wrapper = document.querySelector(".wrapper");
 let animating = true;
-let defaultSpeed =
-  options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
+let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
 
 //Construction of button class
-function Ball(name, color, r, speed = defaultSpeed) {
+function Ball(name, color, size, speed = defaultSpeed) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
-  this.r = r;
+  this.r = size;
   this.speed = speed;
   this.angle = Math.floor(Math.random() * 360);
   this.vector = {};
@@ -37,7 +36,7 @@ Ball.prototype.initDOM = function() {
   ball.style.height = this.r + "px";
   ball.innerText = this.name;
   ball.style.backgroundColor = this.color;
-
+  ball.style.borderColor = this.color
   this.domElement = ball;
   wrapper.appendChild(ball);
 };
@@ -83,14 +82,14 @@ Ball.prototype.updateDOM = function() {
 //Creation of starting button menu
 var balls = [];
 let tulip = new Ball("tulip", "#fe02a2", 45, 1.8);
-let lucrece = new Ball("lucrece", "#fe02a2", 45, 1.8);
+let lucrece = new Ball("lucrèce", "#fe02a2", 45, 1.8);
 let cite = new Ball("cite", "#fe02a2", 45, 1.8);
 let about = new Ball("about", "#41fdfe", 45, 1.2);
 let contact = new Ball("contact", "#41fdfe", 45, 1.2);
-let other = new Ball("other", "#bc13fe", 45, 1.9);
-let things = new Ball("things", "#bc13fe", 45, 1.9);
-let sundaey = new Ball("Sundaey", "#DB020C", 45, 1.5);
-let poems = new Ball("poems", "#90ee90", 30, 12);
+let other = new Ball("other", "#ef43f9", 45, 1.9);
+let things = new Ball("things", "#ef43f9", 45, 1.9);
+let sundaey = new Ball("SUNDAEY", "#F05248", 45, 1.5);
+let poems = new Ball("prms", "#E5CFF4", 30, 12);
 balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
 
 //functions for button text switch
@@ -110,8 +109,8 @@ function switchThings(button) {
 
 function switchTulip(button) {
   setInterval(function() {
-    if (button.name === "tulip") button.name = "lucrece";
-    else if (button.name === "lucrece") button.name = "cite";
+    if (button.name === "tulip") button.name = "lucrèce";
+    else if (button.name === "lucrèce") button.name = "cite";
     else if (button.name === "cite") button.name = "tulip";
   }, 2000);
 }
@@ -164,31 +163,30 @@ function pauseButtons() {
 
 //SPawn new poem buttons
 function spawnPoems() {
-  time = 10000;
+  time = 1000;
   if (animating === true) {
     setInterval(function() {
-      let x = new Ball("poems", "#90ee90", 30, "www.google.com", 12);
+      let x = new Ball("prms", "#90ee90", 30, 12);
       time /= 2;
       balls.push(x);
     }, time);
   } else {
     //create stop interval
-    time = 10000;
+    time = 1000;
   }
 }
 
 //create random button movement
 function randomMovement() {
-  if (animating === true) {
+  if(animating === true) {
     setInterval(function() {
       let i = Math.floor(Math.random() * balls.length);
       let ball = balls[i];
-      console.log(i);
-      ball.vector.x = Math.random() * 2;
-      ball.vector.y = Math.random() * 2;
-    }, 1000);
+      ball.vector.x = Math.random() * 2.5;
+      ball.vector.y = Math.random() * -2;
+    }, 300);
   }
 }
 
 randomMovement();
-spawnPoems();
+// spawnPoems();
