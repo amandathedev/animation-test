@@ -43,15 +43,17 @@ Ball.prototype.initDOM = function() {
 
 redirectButton = name => {
   if (name === "tulip" || name === "lucrece" || name === "cite") {
-    window.location.href = "tulip.html";
+    window.location.href = "tulip/tulip.html";
   } else if (name === "about" || name === "contact") {
-    window.location.href = "about.html";
+    window.location.href = "about/about.html";
   } else if (name === "other" || name === "things") {
-    window.location.href = "things.html";
+    window.location.href = "things/things.html";
   } else if (name === "Sundaey") {
     window.location.href = "https://www.propellerbooks.com/";
   } else if (name === "poems") {
-    window.location.href = "poems.html";
+    window.location.href = "poems/poems.html";
+  } else if (name === "august"){
+    window.location.href = 'august/august.html'
   }
 };
 
@@ -89,8 +91,9 @@ let contact = new Ball("contact", "#41fdfe", 45, 1.2);
 let other = new Ball("other", "#ef43f9", 45, 1.9);
 let things = new Ball("things", "#ef43f9", 45, 1.9);
 let sundaey = new Ball("SUNDAEY", "#F05248", 45, 1.5);
-let poems = new Ball("prms", "#E5CFF4", 30, 12);
-balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems);
+let poems = new Ball("prms", "#E5CFF4", 30, 6);
+let august = new Ball("august", "pink", 45, 1.7)
+balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems, august);
 
 //functions for button text switch
 function switchAbout(button) {
@@ -142,7 +145,9 @@ window.addEventListener("resize", event => {
 
 //Stop animation button
 let button = document.getElementById("button1");
-button.addEventListener("click", () => pauseButtons());
+button.addEventListener("click", () => {
+  pauseButtons()
+});
 function pauseButtons() {
   for (let i = 0; i < balls.length; i++) {
     let ball = balls[i];
@@ -161,32 +166,31 @@ function pauseButtons() {
   animating = !animating;
 }
 
-//SPawn new poem buttons
+//Sawn new poem buttons
 function spawnPoems() {
-  time = 1000;
-  if (animating === true) {
-    setInterval(function() {
-      let x = new Ball("prms", "#90ee90", 30, 12);
+  time = 5000;
+  setInterval(function() {
+    if(animating === true){
+      let x = new Ball("prms", "#90ee90", 30, 6);
       time /= 2;
       balls.push(x);
-    }, time);
-  } else {
-    //create stop interval
-    time = 1000;
-  }
+    }else{
+      time = 5000
+    }
+  }, time);
 }
 
 //create random button movement
 function randomMovement() {
-  if(animating === true) {
-    setInterval(function() {
-      let i = Math.floor(Math.random() * balls.length);
-      let ball = balls[i];
-      ball.vector.x = Math.random() * 2.5;
-      ball.vector.y = Math.random() * -2;
+    setInterval(function random() {
+      if(animating === true) {
+        let i = Math.floor(Math.random() * balls.length);
+        let ball = balls[i];
+        ball.vector.y = Math.cos(ball.angle) * ball.speed * Math.random() * 2
+        ball.vector.x = Math.cos(ball.angle) * ball.speed * Math.random() * 2
+      }
     }, 300);
-  }
 }
 
 randomMovement();
-// spawnPoems();
+spawnPoems();
