@@ -12,7 +12,6 @@ body {
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
   animation: gradientBG 10s ease infinite;
-  cursor: url(halloween-black-cat.png), auto;
 }
 
 @-webkit-keyframes gradientBG {
@@ -73,8 +72,6 @@ a {
   position: absolute;
   border-radius: 20%;
   font-size: 110%;
-  box-shadow: 1px 2px 1.5px 2px rgb(62, 242, 255);
-  /* color: yellow; */
   color: black;
   font-family: "Alata", sans-serif;
   text-align: center;
