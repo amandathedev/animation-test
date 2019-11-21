@@ -219,15 +219,16 @@ function changeBackground(){
   let body = document.querySelector("body")
   let count = 1
   setInterval(function(){
+    count++
     if(count % 20 === 0){
-      body.style.backgroundImage = "hey"
+      body.style.backgroundImage = `url("https://i.imgur.com/OJPrb4B.gif")`
     }
     else{
-      url("https://i.imgur.com/6lk8XWL.png")
+      body.style.backgroundImage = `url("https://i.imgur.com/6lk8XWL.png")`
     }
-  }, 1000)
+  }, 5000)
 }
 
 randomMovement();
 spawnPoems();
-changeBackground()
+// changeBackground()
