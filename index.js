@@ -4,8 +4,8 @@ const options = {
 };
 
 //globals
-let w = window.innerWidth;
-let h = window.innerHeight;
+let w = window.innerWidth - 100;
+let h = window.innerHeight - 100;
 let wrapper = document.querySelector(".wrapper");
 let animating = true;
 let defaultSpeed =
@@ -189,10 +189,18 @@ function pauseButtons() {
 //Sawn new poem buttons
 function spawnPoems() {
   time = 5000;
+  let opacity = 1
   setInterval(function() {
+<<<<<<< HEAD
     if (animating === true) {
       let x = new Ball("prms", "#FF765E", 30, 6);
+=======
+    if(animating === true){
+      let x = new Ball("prms", `rgba(250, 91, 61, ${opacity})`, 35, 6);
+>>>>>>> 87b95f9c042fcce0a837e0750ab4f117b5af988c
       time /= 2;
+      if(opacity <= .1)opacity = 1
+      else opacity -= .05
       balls.push(x);
     } else {
       time = 5000;
