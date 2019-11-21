@@ -186,16 +186,16 @@ function pauseButtons() {
   animating = !animating;
 }
 
-//Sawn new poem buttons
+//Spawn new poem buttons
 function spawnPoems() {
   time = 5000;
-  let opacity = 1
+  let opacity = 1;
   setInterval(function() {
-    if(animating === true){
+    if (animating === true) {
       let x = new Ball("prms", `rgba(250, 91, 61, ${opacity})`, 35, 6);
       time /= 2;
-      if(opacity <= .1)opacity = 1
-      else opacity -= .05
+      if (opacity <= 0.1) opacity = 1;
+      else opacity -= 0.05;
       balls.push(x);
     } else {
       time = 5000;
@@ -205,14 +205,14 @@ function spawnPoems() {
 
 //create random button movement
 function randomMovement() {
-    setInterval(function() {
-      if(animating === true) {
-        let i = Math.floor(Math.random() * balls.length);
-        let ball = balls[i];
-        ball.vector.y = Math.cos(ball.angle) * ball.speed * Math.random() * 2
-        ball.vector.x = Math.cos(ball.angle) * ball.speed * Math.random() * 2
-      }
-    }, 300);
+  setInterval(function() {
+    if (animating === true) {
+      let i = Math.floor(Math.random() * balls.length);
+      let ball = balls[i];
+      ball.vector.y = Math.cos(ball.angle) * ball.speed * Math.random() * 2;
+      ball.vector.x = Math.cos(ball.angle) * ball.speed * Math.random() * 2;
+    }
+  }, 300);
 }
 
 function changeBackground(){
