@@ -4,8 +4,8 @@ const options = {
 };
 
 //globals
-let w = window.innerWidth;
-let h = window.innerHeight;
+let w = window.innerWidth - 100;
+let h = window.innerHeight - 100;
 let wrapper = document.querySelector(".wrapper");
 let animating = true;
 let defaultSpeed = options.ballBaseSpeed + Math.floor(Math.random() * options.ballVariantSpeed);
@@ -86,12 +86,12 @@ var balls = [];
 let tulip = new Ball("tulip", "#fe02a2", 45, 1.8);
 let lucrece = new Ball("lucrèce", "#fe02a2", 45, 1.8);
 let cite = new Ball("cite", "#fe02a2", 45, 1.8);
-let about = new Ball("about", "#41fdfe", 45, 1.2);
-let contact = new Ball("contact", "#41fdfe", 45, 1.2);
-let other = new Ball("other", "#ef43f9", 45, 1.9);
-let things = new Ball("things", "#ef43f9", 45, 1.9);
+let about = new Ball("about", "#48adf1", 45, 1.2);
+let contact = new Ball("contact", "#48adf1", 45, 1.2);
+let other = new Ball("other", "#01ffc3", 45, 1.9);
+let things = new Ball("things", "#01ffc3", 45, 1.9);
 let sundaey = new Ball("SUNDAEY", "#F05248", 45, 1.5);
-let poems = new Ball("prms", "#E5CFF4", 30, 6);
+let poems = new Ball("prms", "#E5CFF4", 35, 6);
 let august = new Ball("august", "pink", 45, 1.7)
 balls.push(tulip, lucrece, cite, about, contact, other, things, sundaey, poems, august);
 
@@ -169,10 +169,13 @@ function pauseButtons() {
 //Sawn new poem buttons
 function spawnPoems() {
   time = 5000;
+  let opacity = 1
   setInterval(function() {
     if(animating === true){
-      let x = new Ball("prms", "#90ee90", 30, 6);
+      let x = new Ball("prms", `rgba(250, 91, 61, ${opacity})`, 35, 6);
       time /= 2;
+      if(opacity <= .1)opacity = 1
+      else opacity -= .05
       balls.push(x);
     }else{
       time = 5000

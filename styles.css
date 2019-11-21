@@ -42,8 +42,8 @@ a {
 
 .ball {
   position: absolute;
-  border-radius: 20%;
   font-size: 110%;
+  border-radius: 20%;
   box-shadow: 1px 2px 4px;
   /* color: yellow; */
   color: black;
