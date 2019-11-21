@@ -5,9 +5,87 @@
   background: #46433f;
 }
 
+body {
+  background: #46433f;
+}
+
+.outer {
+  position: relative;
+  width: 25%;
+  padding-bottom: 25%;
+}
+.inner {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: #00ff00;
+}
+
+#box-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 .ball {
   position: absolute;
   border-radius: 8%;
   border-color: #46433f;
   font-size: 110%;
+}
+
+.corner-buttons {
+  display: block;
+  justify-content: right;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid greenyellow;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.corner-buttons:hover {
+  color: #fff;
+  outline: 0;
+}
+
+.corner-buttons:focus {
+  color: #fff;
+  outline: 0;
+}
+
+#button1 {
+  border-color: blue;
+  color: #fff;
+  box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+  transition: all 150ms ease-in-out;
+}
+
+#button1:hover {
+  box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+}
+
+.button-div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 2em;
+  margin-top: 2em;
 }
