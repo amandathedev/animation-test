@@ -6,6 +6,7 @@
 
 body {
   background-image: url("https://i.imgur.com/6lk8XWL.png");
+  /* background-image: url("https://i.imgur.com/OJPrb4B.gif") */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -40,8 +41,7 @@ a {
 .ball {
   position: absolute;
   font-size: 110%;
-  border-radius: 20%;
-  box-shadow: 1px 2px 4px;
+  box-shadow: 1px 2px 1.5px 2px rgb(62, 242, 255);
   /* color: yellow; */
   color: black;
   font-family: "Alata", sans-serif;
@@ -103,11 +103,12 @@ a {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   letter-spacing: 4px;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-transform: uppercase;
   -webkit-tap-highlight-color: transparent;
   transition: all 500ms ease-in-out;
   width: 23em;
+  background-color: rgba(250, 242, 154, 0.37);
 }
 
 #button2:hover {
