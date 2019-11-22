@@ -222,9 +222,9 @@ function consoleMessage(){
     if(num > 5)num = 0
     console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`)
     num++
-  }, 1000)
+  }, 100)
 }
 
 randomMovement();
 spawnPoems();
-// consoleMessage()
+consoleMessage()
