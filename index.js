@@ -41,9 +41,7 @@ Ball.prototype.initDOM = function() {
   ball.style.backgroundColor = this.color;
   ball.style.borderColor = this.color;
   this.domElement = ball;
-  this.domElement = svg;
   wrapper.appendChild(ball);
-  wrapper.appendChild(svg)
 };
 
 redirectButton = name => {
