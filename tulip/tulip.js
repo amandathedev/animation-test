@@ -37,4 +37,13 @@ function theDarkness() {
   }, 100);
 }
 
-theDarkness();
+// theDarkness();
+
+let orThing = document.getElementById("or-thing");
+
+orThing.addEventListener("click", () => redirectOr());
+
+function redirectOr() {
+  window.location.href =
+    "https://www.joann.com/30in-wood-boat-oar/13950316.html#q=oar&start=1";
+}

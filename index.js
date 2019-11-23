@@ -85,6 +85,7 @@ Ball.prototype.updateDOM = function() {
 };
 
 //Creation of starting button menu
+let prepBalls = [];
 var balls = [];
 // group 1 #FF407D
 let tulip = new Ball("tulip", "rgba(255, 255, 255, 0.702)", 45, 1.8, "#FF355E");
@@ -249,6 +250,16 @@ function consoleMessage() {
   }, 100);
 }
 
+function start() {
+  let count = 0;
+  let x = new Ball("Why?", "rgba(255, 255, 255, 0.702)", 45, 1.8, "black");
+  let ballArr = [x];
+  setInterval(function() {
+    balls.push(ballArr[count]);
+  }, 200);
+}
+
 randomMovement();
 spawnPoems();
 consoleMessage();
+start();

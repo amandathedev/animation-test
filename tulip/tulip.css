@@ -19,6 +19,7 @@
   border-radius: 2rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;
+  cursor: pointer;
 }
 
 .dark-title::-moz-selection {
