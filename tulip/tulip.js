@@ -30,11 +30,11 @@ function theDarkness() {
   setInterval(function() {
     mainDiv.innerHTML = "";
     console.log("count");
-    if (count % 5 === 0) {
+    if (count % 20 === 0) {
       mainDiv.appendChild(div1);
     } else mainDiv.appendChild(div2);
     count++;
-  }, 2500);
+  }, 100);
 }
 
 theDarkness();

@@ -41,9 +41,7 @@ Ball.prototype.initDOM = function() {
   ball.style.backgroundColor = this.color;
   ball.style.borderColor = this.color;
   this.domElement = ball;
-  this.domElement = svg;
   wrapper.appendChild(ball);
-  wrapper.appendChild(svg)
 };
 
 redirectButton = name => {
@@ -53,8 +51,8 @@ redirectButton = name => {
     window.location.href = "about/about.html";
   } else if (name === "other" || name === "things") {
     window.location.href = "things/things.html";
-  } else if (name === "Sundaey") {
-    window.location.href = "https://www.propellerbooks.com/";
+  } else if (name === "SUNDAEY") {
+    window.location.href = "sundaey/sundaey.html";
   } else if (name === "prms") {
     window.location.href = "poems/poems.html";
   } else if (name === "august") {
@@ -253,4 +251,4 @@ function consoleMessage() {
 
 randomMovement();
 spawnPoems();
-consoleMessage()
+consoleMessage();
