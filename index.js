@@ -41,7 +41,9 @@ Ball.prototype.initDOM = function() {
   ball.style.backgroundColor = this.color;
   ball.style.borderColor = this.color;
   this.domElement = ball;
+  this.domElement = svg;
   wrapper.appendChild(ball);
+  wrapper.appendChild(svg)
 };
 
 redirectButton = name => {
@@ -246,9 +248,9 @@ function consoleMessage() {
     if (num > 5) num = 0;
     console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`);
     num++;
-  }, 1000);
+  }, 100);
 }
 
 randomMovement();
 spawnPoems();
-// consoleMessage()
+consoleMessage()

@@ -12,7 +12,6 @@ body {
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
   animation: gradientBG 10s ease infinite;
-  /* cursor: url(halloween-black-cat.png), auto; */
 }
 
 @-webkit-keyframes gradientBG {
@@ -26,6 +25,7 @@ body {
     background-position: 0% 50%;
   }
 }
+
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
