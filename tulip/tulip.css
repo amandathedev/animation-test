@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200);
 #the-darkness {
   font-family: "Exo 2", sans-serif;
   display: flex;
@@ -12,24 +12,24 @@
 .dark-title {
   font-size: 9rem;
   font-weight: 200;
-  font-style: italic;
-  color: #fff;
+  color: #012401;
   padding: 4rem 2rem 5.5rem;
   margin-left: 1em;
-  border: 0.4rem solid #fff;
+  border: 0.4rem solid #012401;
   border-radius: 2rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;
+  cursor: pointer;
 }
 
 .dark-title::-moz-selection {
-  background-color: #fff;
-  color: #fff;
+  background-color: #012401;
+  color: #012401;
 }
 
 .dark-title::selection {
-  background-color: #fff;
-  color: #fff;
+  background-color: #012401;
+  color: #012401;
 }
 
 .dark-title:focus {
@@ -45,11 +45,12 @@
   54%,
   56%,
   100% {
-    text-shadow: -0.2rem -0.2rem 0.5rem #fff, 0.2rem 0.2rem 0.5rem #fff,
-      0 0 2rem #fff, 0 0 4rem #fff, 0 0 6rem #fff, 0 0 8rem #fff, 0 0 10rem #fff;
+    text-shadow: -0.2rem -0.2rem 0.5rem #daf7a6, 0.2rem 0.2rem 0.5rem #daf7a6,
+      0 0 2rem #daf7a6, 0 0 4rem #daf7a6, 0 0 6rem #daf7a6, 0 0 8rem #daf7a6,
+      0 0 10rem #daf7a6;
 
-    box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff, 0 0 1rem #fff,
-      inset 0 0 2rem #fff, 0 0 4rem #fff, inset 0 0 4rem #fff;
+    box-shadow: 0 0 0.5rem #daf7a6, inset 0 0 0.5rem #daf7a6, 0 0 1rem #daf7a6,
+      inset 0 0 2rem #daf7a6, 0 0 4rem #daf7a6, inset 0 0 4rem #daf7a6;
   }
 
   20%,
