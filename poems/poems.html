@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <script src="poems.js"></script>
+    <link rel="stylesheet" href="poems.css" />
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script
+      src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+      defer
+    ></script>
+    <!-- stats.js lib -->
+    <script
+      src="http://threejs.org/examples/js/libs/stats.min.js"
+      defer
+    ></script>
+    <title>Poems</title>
   </head>
   <body>
-    <h1>poems in this bitch</h1>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <div class="count-particles">
+      <span class="js-count-particles">--</span> particles
+    </div>
   </body>
 </html>
