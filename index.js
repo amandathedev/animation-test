@@ -213,7 +213,7 @@ function pauseButtons() {
 
 //Spawn new poem buttons `rgba(250, 91, 61, ${opacity})`
 function spawnPoems() {
-  time = 5000;
+  time = 2500;
   let opacity = 1;
   setInterval(function() {
     if (animating === true) {
@@ -223,7 +223,7 @@ function spawnPoems() {
       else opacity -= 0.05;
       balls.push(x);
     } else {
-      time = 5000;
+      time = 2500;
     }
   }, time);
 }
@@ -262,4 +262,4 @@ function start() {
 randomMovement();
 spawnPoems();
 consoleMessage();
-start();
+// start();
