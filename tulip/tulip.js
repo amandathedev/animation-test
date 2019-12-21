@@ -24,33 +24,32 @@ let div2 = document.getElementById("book-div");
 let mainDiv = document.querySelector("body");
 
 function theDarkness() {
-  time = 1000
-  count = 0
+  time = 1000;
+  count = 0;
   mainDiv.innerHTML = "";
   mainDiv.appendChild(div2);
   setInterval(function() {
     mainDiv.innerHTML = "";
-    count++
-    console.log(count)
-    if(count % 20 === 0){
-      fastDarkness()
-    }
-    else if (count % 3 === 0) {
+    count++;
+    console.log(count);
+    if (count % 20 === 0) {
+      fastDarkness();
+    } else if (count % 3 === 0) {
       mainDiv.appendChild(div1);
     } else {
       mainDiv.appendChild(div2);
-    } 
+    }
   }, time);
 }
 
-function fastDarkness(){
-  time = 1git commi00
-  count = 0
+function fastDarkness() {
+  time = 1000;
+  count = 0;
   mainDiv.innerHTML = "";
   mainDiv.appendChild(div2);
   let tryst = setInterval(function() {
     mainDiv.innerHTML = "";
-    count++
+    count++;
     if (count % 3 === 0) {
       mainDiv.appendChild(div1);
     } else {
@@ -58,9 +57,8 @@ function fastDarkness(){
     }
   }, time);
 
-  if(count > 6)clearInterval(tryst)
+  if (count > 6) clearInterval(tryst);
 }
-
 
 let orThing = document.getElementById("or-thing");
 orThing.addEventListener("click", () => redirectOr());
@@ -70,6 +68,4 @@ function redirectOr() {
     "https://www.joann.com/30in-wood-boat-oar/13950316.html#q=oar&start=1";
 }
 
-
 theDarkness();
-

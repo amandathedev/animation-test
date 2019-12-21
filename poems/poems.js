@@ -22,7 +22,7 @@ Poem.prototype.initDOM = function() {
   ball.style.left = this.x + "px";
   ball.style.top = this.y + "px";
   ball.style.width = this.r * 2 + "px";
-  ball.style.height = this.r + "px";
+  ball.style.height = this.r * 1.5 + "px";
   ball.innerText = this.name;
   ball.style.color = this.textColor;
   ball.style.backgroundColor = this.color;
@@ -67,4 +67,4 @@ let yvm = new Poem("http://www.radioactivemoat.com/kirsten-ihns.html");
 
 const redirectButton = link => {
   window.location.href = link;
-}
+};
