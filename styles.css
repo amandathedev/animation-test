@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #d645fa, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #de89f3, #f782af, #7ed5f5, #74f2d5);
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
   animation: gradientBG 10s ease infinite;
@@ -25,6 +25,7 @@ body {
     background-position: 0% 50%;
   }
 }
+
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -70,14 +71,77 @@ a {
 
 .ball {
   position: absolute;
-  border-radius: 20%;
+  border-radius: 100px;
   font-size: 110%;
+<<<<<<< HEAD
   color: black;
+=======
+  /* box-shadow: 1px 2px 1.5px 2px; */
+>>>>>>> 5cda0bbd4dca9737e809e97a8a14679de969d7c8
   font-family: "Alata", sans-serif;
   text-align: center;
-  border-radius: 20%;
-  transform: skew(10deg);
   cursor: pointer;
+  outline: 0;
+  /* height: 25rem;
+  width: 25rem;
+  top: 90%;
+  right: 25%; */
+  /* animation: blob 10s ease-in-out infinite; */
+  animation: fadeIn 500ms reverse;
+  animation: morph 3s linear infinite;
+}
+
+.balls:before,
+.balls:after {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  animation-delay: 200ms;
+}
+
+.balls:before {
+  animation: morph 3s linear infinite;
+  animation-duration: 1.5s;
+}
+
+.balls:after {
+  animation: morph 3s linear infinite;
+  animation-delay: 400ms;
+  line-height: 120px;
+  text-indent: -21px;
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.5deg);
+  }
+  20% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    /* border-radius: 75% 60% 25% 30% / 75% 60% 25% 30%; */
+    transform: translate3d(0, 5px, 0) rotateZ(0.05deg);
+  }
+  40% {
+    opacity: 0.89;
+    transform: translate3d(0, 0, 0) rotateZ(0.5deg);
+  }
+  60% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.05deg);
+  }
+  80% {
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.05deg);
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    transform: scale(1.03);
+    opacity: 0;
+  }
 }
 
 .corner-buttons {
