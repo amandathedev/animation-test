@@ -32,7 +32,7 @@ Poem.prototype.initDOM = function() {
   ball.style.backgroundColor = this.color;
   ball.style.borderColor = this.color;
   this.domElement = ball;
-  console.log(wrapper)
+  console.log(this.name)
   wrapper.appendChild(ball);
 };
 
