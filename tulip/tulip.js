@@ -44,7 +44,7 @@ function theDarkness() {
 }
 
 function fastDarkness(){
-  time = 100
+  time = 1git commi00
   count = 0
   mainDiv.innerHTML = "";
   mainDiv.appendChild(div2);
