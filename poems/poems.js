@@ -2,12 +2,12 @@ let w = window.innerWidth - 100;
 let h = window.innerHeight - 100;
 
 let poemName = ["poem", "another poem", "pome", "prm", "anthr prm"];
-function Poem(link) {
+function Poem(link, name= poemName[Math.floor(Math.random() * poemName.length)], r= 25) {
   this.x = Math.floor(Math.random() * w);
   this.y = Math.floor(Math.random() * h);
-  this.r = 25;
+  this.r = r;
   this.color = "red";
-  this.name = poemName[Math.floor(Math.random() * poemName.length)];
+  this.name = name;
   this.textColor = "white";
   this.link = link;
   this.initDOM();
@@ -66,6 +66,9 @@ let ywtb = new Poem("https://tagvverk.info/2017/07/06/kirsten-ihns/");
 let yvm = new Poem("http://www.radioactivemoat.com/kirsten-ihns.html");
 let us = new Poem("http://lavaguejournal.com/lavague11/ihns.php")
 let tzww = new Poem("http://ndrmag.org/uncategorized/2016/05/the-zeal-with-which-you-fulfill-your-needs-is-disturbing-perhaps-you-could-seem-to-hesitate/")
+
+let sundaey = new Poem("https://www.propellerbooks.com/store/sundaey-by-kirsten-ihns", "SUNDAEY", 35)
+
 
 const redirectButton = link => {
   window.location.href = link;
