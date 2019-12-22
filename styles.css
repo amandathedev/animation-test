@@ -10,7 +10,7 @@
 
 body {
   /* background: linear-gradient(-45deg, #de89f3, #f782af, #7ed5f5, #74f2d5); */
-  background: linear-gradient(-45deg, #cc00ff, #ff0062, #0051ff, #00ffc3);
+  background: linear-gradient(-45deg, #cc00ff, #ff0062, #0066ff, #8800ff);
   background-size: 400% 400%;
   -webkit-animation: gradientBG 20s ease infinite;
   animation: gradientBG 20s ease infinite;
