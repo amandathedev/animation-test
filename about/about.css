@@ -43,8 +43,8 @@
   }
 
   7% {
-    transform: skew(-0.3deg, -0.3deg);
-    opacity: 0.75;
+    transform: skew(-0.3deg, -0.4deg);
+    opacity: 0.45;
   }
 
   10% {
@@ -58,7 +58,7 @@
   }
 
   30% {
-    transform: skew(0.3deg, -0.1deg);
+    transform: skew(0.4deg, -0.1deg);
     opacity: 0.75;
   }
 
