@@ -23,7 +23,9 @@ function Ball(name, color, size, speed = defaultSpeed, textColor = "black") {
   this.vector.x = Math.cos(this.angle) * this.speed;
   this.color = color;
   this.name = name;
-  this.textColor = "#52253A";
+  // this.textColor = "#52253A";
+  this.textColor = "#9C00B1";
+
   this.initDOM();
 }
 
