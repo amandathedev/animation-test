@@ -1,0 +1,106 @@
+body,
+html {
+  height: 100%;
+  background: gold;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  /* transform: scale(0.92); */
+}
+
+.two.two {
+  transform: scaleX(-1);
+  border-right: 14px solid gold;
+  background: url(https://i.imgur.com/zr8zzFh.jpg) -40px 150px / 77% no-repeat;
+}
+
+.two.two .bottom {
+  background: url(https://i.imgur.com/f4mTy28.jpg) 222px -111px / 66% no-repeat;
+}
+
+.two.two .bottom::after {
+  background: url(https://i.imgur.com/UsE4rS7.jpg) center/156% no-repeat;
+}
+
+.two.two .middle {
+  background: url(https://i.imgur.com/cDg1zjm.jpg) -30px -20px /cover no-repeat;
+}
+
+.two.two .top {
+  background: url(https://i.imgur.com/jAZwjbn.jpg) right / 57% no-repeat;
+}
+
+.two.two .top::after {
+  background: url(https://i.imgur.com/mrmwAnU.jpg) center / 100% no-repeat;
+}
+
+.wrap {
+  width: 600px;
+  height: 650px;
+  position: relative;
+  overflow: hidden;
+  background: url(https://i.imgur.com/cDg1zjm.jpg) -300px -100px / cover no-repeat;
+}
+
+.top {
+  width: 660px;
+  height: 270px;
+  position: absolute;
+  z-index: 2;
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  top: -90px;
+  left: -66px;
+  border: 14px solid gold;
+  overflow: hidden;
+  background: url(https://i.imgur.com/UsE4rS7.jpg) 250px center / 80% no-repeat;
+}
+
+.top::after {
+  content: " ";
+  display: block;
+  width: 300px;
+  height: 300px;
+  border: 14px solid gold;
+  transform: rotate(-5deg);
+  background: url(https://i.imgur.com/nQ3tEHS.jpg) -50px 0px / cover no-repeat;
+}
+
+.middle {
+  width: 320px;
+  height: 400px;
+  position: absolute;
+  right: -110px;
+  top: 132px;
+  z-index: 1;
+  transform: rotate(8deg);
+  border: 14px solid gold;
+  background: url(https://i.imgur.com/rd7qnCw.jpg) -100px top / cover no-repeat;
+}
+
+.bottom {
+  z-index: 2;
+  width: 700px;
+  height: 270px;
+  position: absolute;
+  transform: rotate(5deg);
+  bottom: -90px;
+  right: -80px;
+  border: 14px solid gold;
+  overflow: hidden;
+  background: url(https://i.imgur.com/jAZwjbn.jpg) 150px -250px/ 80% no-repeat;
+}
+
+.bottom::after {
+  content: " ";
+  display: block;
+  width: 300px;
+  height: 300px;
+  border: 14px solid gold;
+  transform: translate(-70px, -65px) rotate(17deg);
+  background: url(https://i.imgur.com/f4mTy28.jpg) 50px -40px / cover no-repeat;
+}
