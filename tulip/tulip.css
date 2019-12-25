@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200);
+
 #the-darkness {
   font-family: "Exo 2", sans-serif;
   display: flex;
@@ -6,14 +7,17 @@
   /* align-items: center; */
   background: #000;
   min-height: 100vh;
+
   /* display: none; */
 }
 
+.neon {}
+
 .dark-title {
-  font-size: 9rem;
+  font-size: 7rem;
   font-weight: 200;
   color: #012401;
-  padding: 4rem 2rem 5.5rem;
+  padding: 3.5rem 2rem 4.5rem;
   margin-left: 1em;
   border: 0.4rem solid #012401;
   border-radius: 2rem;
@@ -37,6 +41,7 @@
 }
 
 @keyframes flicker {
+
   0%,
   19%,
   21%,
@@ -64,6 +69,7 @@
 html {
   height: 100%;
 }
+
 body {
   margin: 0;
   min-height: 100%;
@@ -84,9 +90,11 @@ body {
 html.w-mod-touch * {
   background-attachment: scroll !important;
 }
+
 .w-block {
   display: block;
 }
+
 .w-inline-block {
   max-width: 100%;
   display: inline-block;
@@ -154,6 +162,7 @@ html.w-mod-touch * {
   word-spacing: normal;
   word-wrap: normal;
 }
+
 .w-webflow-badge {
   position: fixed !important;
   display: inline-block !important;
@@ -180,7 +189,8 @@ html.w-mod-touch * {
   white-space: nowrap;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
-.w-webflow-badge > img {
+
+.w-webflow-badge>img {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -192,9 +202,11 @@ html.w-mod-touch * {
   content: " ";
   display: table;
 }
+
 .w-richtext:after {
   clear: both;
 }
+
 .w-richtext[contenteditable="true"]:before,
 .w-richtext[contenteditable="true"]:after {
   white-space: initial;
@@ -268,12 +280,9 @@ a {
   perspective: 4000px;
   -webkit-perspective-origin: 50% 50%;
   perspective-origin: 50% 50%;
-  -webkit-transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg)
-    rotateZ(-10deg);
-  transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg)
-    rotateZ(-10deg);
-  -webkit-transition: -webkit-transform 2000ms
-    cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg) rotateZ(-10deg);
+  transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg) rotateZ(-10deg);
+  -webkit-transition: -webkit-transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: -webkit-transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -457,31 +466,23 @@ a {
 
 .center {
   width: 3%;
-  background-image: -webkit-radial-gradient(
-      circle farthest-corner at 56% -8%,
+  background-image: -webkit-radial-gradient(circle farthest-corner at 56% -8%,
       #fff 8%,
-      transparent 0
-    ),
-    -webkit-radial-gradient(circle farthest-corner at 50% 108%, #fff 8%, transparent
-          0),
-    -webkit-linear-gradient(0deg, #635648, #2e1800 21%, #635648 30%, #2e1800 48%, #635648
-          68%, #2e1800 79%, #635648);
-  background-image: radial-gradient(
-      circle farthest-corner at 56% -8%,
+      transparent 0),
+    -webkit-radial-gradient(circle farthest-corner at 50% 108%, #fff 8%, transparent 0),
+    -webkit-linear-gradient(0deg, #635648, #2e1800 21%, #635648 30%, #2e1800 48%, #635648 68%, #2e1800 79%, #635648);
+  background-image: radial-gradient(circle farthest-corner at 56% -8%,
       #fff 8%,
-      transparent 0
-    ),
+      transparent 0),
     radial-gradient(circle farthest-corner at 50% 108%, #fff 8%, transparent 0),
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       #635648,
       #2e1800 21%,
       #635648 30%,
       #2e1800 48%,
       #635648 68%,
       #2e1800 79%,
-      #635648
-    );
+      #635648);
 }
 
 .corner-fold {
@@ -492,20 +493,16 @@ a {
   height: 30px;
   border-right: 1px solid hsla(0, 13%, 82%, 0.55);
   border-bottom: 1px solid hsla(0, 13%, 82%, 0.55);
-  background-image: -webkit-linear-gradient(
-    315deg,
-    transparent 47%,
-    #f0f0f0 48%,
-    #fff 55%,
-    #f6f6f6
-  );
-  background-image: linear-gradient(
-    135deg,
-    transparent 47%,
-    #f0f0f0 48%,
-    #fff 55%,
-    #f6f6f6
-  );
+  background-image: -webkit-linear-gradient(315deg,
+      transparent 47%,
+      #f0f0f0 48%,
+      #fff 55%,
+      #f6f6f6);
+  background-image: linear-gradient(135deg,
+      transparent 47%,
+      #f0f0f0 48%,
+      #fff 55%,
+      #f6f6f6);
   box-shadow: 6px 6px 9px -4px hsla(0, 13%, 82%, 0.53);
 }
 
@@ -692,46 +689,49 @@ a {
   .scene {
     height: 56vw;
   }
+
   .book-wrap {
     width: 62vw;
   }
+
   .page-left-2 {
     border-top-left-radius: 20%;
   }
+
   .corner-fold {
     left: 0%;
     top: -1%;
     width: 3.5vw;
     height: 3.5vw;
     max-height: 35px;
-    background-image: -webkit-linear-gradient(
-      315deg,
-      transparent 50%,
-      #f0f0f0 51%,
-      #fff 52%,
-      #f6f6f6
-    );
-    background-image: linear-gradient(
-      135deg,
-      transparent 50%,
-      #f0f0f0 51%,
-      #fff 52%,
-      #f6f6f6
-    );
+    background-image: -webkit-linear-gradient(315deg,
+        transparent 50%,
+        #f0f0f0 51%,
+        #fff 52%,
+        #f6f6f6);
+    background-image: linear-gradient(135deg,
+        transparent 50%,
+        #f0f0f0 51%,
+        #fff 52%,
+        #f6f6f6);
   }
+
   .corner {
     top: 8%;
   }
+
   .page-text h3 {
     margin-top: 2vw;
     margin-bottom: 1vw;
     font-size: 3vw;
   }
+
   .page-text h6 {
     margin-top: 1vw;
     margin-bottom: 1vw;
     font-size: 1vw;
   }
+
   .page-right-2 {
     padding-left: 9%;
   }
@@ -742,11 +742,13 @@ a {
     width: 80vw;
     margin-bottom: 2vw;
   }
+
   .layer-text {
     width: 94%;
     -webkit-transform: translate3d(0px, 0px, 20px);
     transform: translate3d(0px, 0px, 20px);
   }
+
   .layer-text.right {
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
@@ -755,63 +757,69 @@ a {
     -webkit-transform: translate3d(-34px, 0px, 24px);
     transform: translate3d(-34px, 0px, 24px);
   }
+
   .page-left-2 {
     border-top-left-radius: 23%;
-    -webkit-transform: rotateX(0deg) rotateY(17deg) rotateZ(0deg)
-      translate(9px, 0px);
+    -webkit-transform: rotateX(0deg) rotateY(17deg) rotateZ(0deg) translate(9px, 0px);
     transform: rotateX(0deg) rotateY(17deg) rotateZ(0deg) translate(9px, 0px);
   }
+
   .corner-fold {
     width: 4.5vw;
     height: 4.5vw;
     max-height: 29px;
     min-width: 29px;
-    background-image: -webkit-linear-gradient(
-      310deg,
-      transparent 48%,
-      #f0f0f0 49%,
-      #fff 50%,
-      #f6f6f6
-    );
-    background-image: linear-gradient(
-      140deg,
-      transparent 48%,
-      #f0f0f0 49%,
-      #fff 50%,
-      #f6f6f6
-    );
+    background-image: -webkit-linear-gradient(310deg,
+        transparent 48%,
+        #f0f0f0 49%,
+        #fff 50%,
+        #f6f6f6);
+    background-image: linear-gradient(140deg,
+        transparent 48%,
+        #f0f0f0 49%,
+        #fff 50%,
+        #f6f6f6);
   }
+
   .page-text {
     margin-top: 2vw;
   }
+
   .page-text h3 {
     margin-top: 0vw;
     font-size: 3vw;
   }
+
   .layer2 {
     -webkit-transform: translate3d(2px, 0px, 6px);
     transform: translate3d(2px, 0px, 6px);
   }
+
   .layer2.right {
     -webkit-transform: translate3d(-5px, 0px, 6px);
     transform: translate3d(-5px, 0px, 6px);
   }
+
   .layer3 {
     -webkit-transform: translate3d(4px, 0px, 12px);
     transform: translate3d(4px, 0px, 12px);
   }
+
   .layer3.right {
     -webkit-transform: translate3d(-10px, 0px, 12px);
     transform: translate3d(-10px, 0px, 12px);
   }
+
   .layer4 {
     -webkit-transform: translate3d(6px, 0px, 18px);
     transform: translate3d(6px, 0px, 18px);
   }
+
   .layer4.right {
     -webkit-transform: translate3d(-15px, 0px, 18px);
     transform: translate3d(-15px, 0px, 18px);
   }
+
   .page-right-2 {
     width: 92%;
     -webkit-box-flex: 0;
@@ -825,6 +833,7 @@ a {
   .scene {
     height: 69vw;
   }
+
   .corner-fold {
     width: 5.5vw;
     height: 5.5vw;

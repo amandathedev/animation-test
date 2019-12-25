@@ -31,7 +31,7 @@ function theDarkness() {
   setInterval(function() {
     mainDiv.innerHTML = "";
     count++;
-    console.log(count);
+    // console.log(count);
     if (count % 20 === 0) {
       fastDarkness();
     } else if (count % 3 === 0) {
