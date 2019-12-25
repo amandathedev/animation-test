@@ -249,7 +249,7 @@ function consoleMessage() {
     if (num > 5) num = 0;
     console.log("%cWe are so sorry", `color: ${colors[num]}; font-size: 20px`);
     num++;
-  }, 100);
+  }, 1000);
 }
 
 function start() {
