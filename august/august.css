@@ -12,6 +12,11 @@ html {
   /* transform: scale(0.92); */
 }
 
+#august-div {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 5em;
+}
+
 .two.two {
   transform: scaleX(-1);
   border-right: 14px solid gold;
@@ -103,4 +108,57 @@ html {
   border: 14px solid gold;
   transform: translate(-70px, -65px) rotate(17deg);
   background: url(https://i.imgur.com/f4mTy28.jpg) 50px -40px / cover no-repeat;
+}
+
+
+/* new stuff */
+
+form {
+  padding: 20px 0;
+  position: relative;
+}
+
+input {
+  display: block;
+  outline: 0;
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  font-size: 18px;
+  color: #040608;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+label {
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #040608;
+  font-weight: 300;
+}
+
+input:focus {
+  width: 300px;
+  color: #040608;
+}
+
+#submit-button {
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #040608;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+
+#submit-button:hover {
+  background-color: #a1a1ee;
 }
