@@ -162,3 +162,7 @@ input:focus {
 #submit-button:hover {
   background-color: #a1a1ee;
 }
+
+table {
+  margin-left: 40%;
+}
