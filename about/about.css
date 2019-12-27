@@ -5,14 +5,37 @@
   margin-right: 10px;
 }
 
+body {
+  width: 100%;
+}
+
 #about-div {
-  margin-top: 7%;
   width: 70%;
-  margin-left: 15%;
+  /* margin-left: 12vw; */
+  margin: 0 auto;
+  margin-top: 7%;
   outline: 1px solid black;
   padding: 30px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 100;
+}
+
+/* phones */
+@media only screen and (max-width: 600px) {
+  #about-div {
+    width: 60%;
+    margin: 0 auto;
+    margin-left: 2em;
+  }
+}
+
+/* tablets */
+@media only screen and (max-width: 900px) {
+  #about-div {
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 2em;
+  }
 }
 
 #about-text {
