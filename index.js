@@ -47,7 +47,7 @@ Ball.prototype.initDOM = function() {
 };
 
 redirectButton = name => {
-  if (name === "tulip" || name === "lucrece" || name === "cite") {
+  if (name === "tulip" || name === "lucrèce" || name === "cite") {
     window.location.href = "tulip/tulip.html";
   } else if (name === "about" || name === "contact") {
     window.location.href = "about/about.html";
