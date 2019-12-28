@@ -31,7 +31,6 @@ function theDarkness() {
   setInterval(function() {
     mainDiv.innerHTML = "";
     count++;
-    // console.log(count);
     if (count % 20 === 0) {
       fastDarkness();
     } else if (count % 3 === 0) {
@@ -67,5 +66,13 @@ function redirectOr() {
   window.location.href =
     "https://www.joann.com/30in-wood-boat-oar/13950316.html#q=oar&start=1";
 }
+
+let backButton = document.createElement("button");
+backButton.innerText = "NO, go back!";
+backButton.addEventListener("click", () => backClick());
+const backClick = () => {
+  window.location.href = "../main.html";
+};
+div2.appendChild(backButton);
 
 theDarkness();
