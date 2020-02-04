@@ -52,9 +52,12 @@ redirectButton = name => {
     window.location.href = "tulip/tulip.html";
   } else if (name === "about" || name === "contact") {
     window.location.href = "about/about.html";
-  } else if (name === "other" || name === "things") {
-    window.location.href = "things/things.html";
-  } else if (name === "SUNDAEY") {
+  }
+  // TODO put this back
+  // else if (name === "other" || name === "things") {
+  //   window.location.href = "things/things.html";
+  // }
+  else if (name === "SUNDAEY") {
     window.location.href = "sundaey/sundaey.html";
   } else if (name === "prms") {
     window.location.href = "poems/poems.html";
