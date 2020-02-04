@@ -7,6 +7,8 @@
 
 body {
   width: 100%;
+  background-color: cyan;
+  color: magenta;
 }
 
 #about-div {
@@ -59,7 +61,7 @@ body {
 
 
 /*Keyframes*/
-@keyframes glitch1 {
+/* @keyframes glitch1 {
   0% {
     transform: none;
     opacity: 1;
@@ -124,4 +126,4 @@ body {
     transform: none;
     opacity: 1;
   }
-}
+} */
